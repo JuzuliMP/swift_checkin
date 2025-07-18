@@ -31,6 +31,19 @@ A comprehensive Flutter application demonstrating UI implementation, navigation,
 ## 🏗️ Architecture
 
 ### MVVM Pattern with Cubit State Management
+This app follows MVVM (Model-View-ViewModel) pattern:
+
+### Layer Responsibilities:
+- **View**: UI widgets and user interaction (`presentation/pages/`, `presentation/widgets/`)
+- **ViewModel**: Business logic and state management (`presentation/cubit/`)
+- **Model**: Data and API calls (would be in `domain/` and `data/` layers)
+
+### Benefits:
+- Clear separation of concerns
+- Improved testability
+- Reactive UI updates
+- Maintainable codebase
+
 ```
 lib/
 ├── core/
