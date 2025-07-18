@@ -19,6 +19,7 @@ class AppTheme {
 
   static ThemeData get lightTheme {
     return ThemeData(
+      fontFamily: 'DMSans',
       useMaterial3: true,
       brightness: Brightness.light,
       colorScheme: const ColorScheme.light(
@@ -26,7 +27,6 @@ class AppTheme {
         onPrimary: lightOnPrimary,
         surface: lightSurface,
         onSurface: lightOnSurface,
-        background: lightBackground,
         secondary: lightSecondary,
       ),
       scaffoldBackgroundColor: lightBackground,
@@ -50,11 +50,11 @@ class AppTheme {
         fillColor: lightSurface,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: lightSecondary),
+          borderSide: const BorderSide(color: lightSecondary),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: lightSecondary),
+          borderSide: const BorderSide(color: lightSecondary),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -66,6 +66,7 @@ class AppTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
+      fontFamily: 'DMSans',
       useMaterial3: true,
       brightness: Brightness.dark,
       colorScheme: const ColorScheme.dark(
@@ -73,7 +74,6 @@ class AppTheme {
         onPrimary: darkOnPrimary,
         surface: darkSurface,
         onSurface: darkOnSurface,
-        background: darkBackground,
         secondary: darkSecondary,
       ),
       scaffoldBackgroundColor: darkBackground,
@@ -97,11 +97,11 @@ class AppTheme {
         fillColor: darkSurface,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: darkSecondary),
+          borderSide: const BorderSide(color: darkSecondary),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: darkSecondary),
+          borderSide: const BorderSide(color: darkSecondary),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
