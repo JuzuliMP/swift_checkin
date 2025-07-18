@@ -24,33 +24,27 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Phone number',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style:
+              theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w300),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 6),
         TextField(
           controller: _phoneController,
           keyboardType: TextInputType.phone,
-          decoration: const InputDecoration(
-            hintText: 'Enter your phone number',
-          ),
         ),
         const SizedBox(height: 24),
-        const Text(
+        Text(
           'Passcode',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style:
+              theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w300),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 6),
         PasscodeField(
           controller: _passcodeController,
           onChanged: (value) {
@@ -64,6 +58,8 @@ class _LoginFormState extends State<LoginForm> {
             Row(
               children: [
                 Checkbox(
+                  visualDensity: VisualDensity.compact,
+                  side: BorderSide(color: theme.colorScheme.secondary),
                   value: _rememberMe,
                   onChanged: (value) {
                     setState(() {
@@ -71,15 +67,22 @@ class _LoginFormState extends State<LoginForm> {
                     });
                   },
                 ),
-                const Text('Remember me'),
+                Text(
+                  'Remember me',
+                  style: theme.textTheme.bodyMedium
+                      ?.copyWith(fontWeight: FontWeight.w300),
+                ),
               ],
             ),
             TextButton(
               onPressed: () {},
-              child: const Text(
+              child: Text(
                 'Forgot Passcode?',
-                style: TextStyle(
-                  color: Color(0xFFE67E22),
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w300,
+                  color: theme.colorScheme.primary,
+                  decoration: TextDecoration.underline,
+                  decorationColor: theme.colorScheme.primary,
                 ),
               ),
             ),
@@ -94,21 +97,25 @@ class _LoginFormState extends State<LoginForm> {
                 onPressed: state is AuthLoading
                     ? null
                     : () {
-                  context.read<AuthCubit>().login(
-                    _phoneController.text,
-                    _passcodeController.text,
-                  );
-                },
+                        context.read<AuthCubit>().login(
+                              _phoneController.text,
+                              _passcodeController.text,
+                            );
+                      },
                 child: state is AuthLoading
                     ? const SizedBox(
-                  height: 20,
-                  width: 20,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  ),
-                )
-                    : const Text('Login'),
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.white),
+                        ),
+                      )
+                    : Text(
+                        'Login',
+                        style: theme.textTheme.titleMedium,
+                      ),
               );
             },
           ),
@@ -118,13 +125,18 @@ class _LoginFormState extends State<LoginForm> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Don't have account? "),
+              Text(
+                "Don't have account?",
+                style: theme.textTheme.bodySmall
+                    ?.copyWith(fontWeight: FontWeight.w300),
+              ),
               TextButton(
                 onPressed: () {},
-                child: const Text(
+                child: Text(
                   'Register',
-                  style: TextStyle(
-                    color: Color(0xFFE67E22),
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: theme.colorScheme.primary,
                   ),
                 ),
               ),

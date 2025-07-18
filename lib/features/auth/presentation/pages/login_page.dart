@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/auth_cubit.dart';
-import '../widgets/login_form.dart';
-import '../../../../core/routes/app_routes.dart';
+import 'package:swift_checkin/core/routes/app_routes.dart';
+import 'package:swift_checkin/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:swift_checkin/features/auth/presentation/widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.arrow_back_ios_rounded),
+        ),
+      ),
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
@@ -25,34 +32,19 @@ class LoginPage extends StatelessWidget {
         },
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                const SizedBox(height: 32),
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.arrow_back_ios),
-                    ),
-                  ],
-                ),
                 const SizedBox(height: 48),
-                const Text(
+                Text(
                   'Login',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFE67E22),
-                  ),
+                  style: theme.textTheme.headlineLarge
+                      ?.copyWith(color: theme.colorScheme.primary),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'Welcome back to your account',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
-                  ),
+                  style: theme.textTheme.titleLarge,
                 ),
                 const SizedBox(height: 48),
                 const Expanded(
