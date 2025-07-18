@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Dark Theme Colors (from images)
-  static const Color darkBackground = Color(0xFF1A1A1A);
-  static const Color darkSurface = Color(0xFF2A2A2A);
-  static const Color darkPrimary = Color(0xFFE67E22);
+  // Dark Theme Colors
+  static const Color darkBackground = Color(0xFF030303);
+  static const Color darkSurface = Color(0xFF1C1C1C);
+  static const Color darkPrimary = Color(0xFFD2815E);
   static const Color darkOnPrimary = Colors.white;
   static const Color darkOnSurface = Colors.white;
   static const Color darkSecondary = Color(0xFF666666);
