@@ -22,7 +22,7 @@ class _CheckinFormState extends State<CheckinForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const WorkerTypeSelector(),
+        const Center(child: WorkerTypeSelector()),
         const SizedBox(height: 24),
         DropdownField(
           label: 'Projects',
@@ -46,12 +46,9 @@ class _CheckinFormState extends State<CheckinForm> {
           },
         ),
         const SizedBox(height: 24),
-        const Text(
+        Text(
           'Select Work Type',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 16),
         WorkTypeSelector(

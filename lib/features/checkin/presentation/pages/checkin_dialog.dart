@@ -9,6 +9,7 @@ class CheckinDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      insetPadding: EdgeInsets.zero,
       backgroundColor: Colors.transparent,
       child: BlocListener<CheckinCubit, CheckinState>(
         listener: (context, state) {
@@ -21,6 +22,7 @@ class CheckinDialog extends StatelessWidget {
               ),
             );
           } else if (state is CheckinError) {
+            Navigator.of(context).pop();
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.message),
@@ -33,7 +35,7 @@ class CheckinDialog extends StatelessWidget {
           margin: const EdgeInsets.all(16),
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surface,
+            color: Theme.of(context).colorScheme.background,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
@@ -43,28 +45,28 @@ class CheckinDialog extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    icon: const Icon(Icons.arrow_back_ios),
+                    icon: const Icon(Icons.arrow_back_ios, size: 16),
                   ),
                   const Spacer(),
                 ],
               ),
-              const SizedBox(height: 16),
-              const Text(
+              const SizedBox(height: 8),
+              Text(
                 'Check-in',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 'Select Check-in Type',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.w600),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 16),
               const CheckinForm(),
             ],
           ),

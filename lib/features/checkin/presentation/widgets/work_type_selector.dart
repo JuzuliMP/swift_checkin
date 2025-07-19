@@ -12,11 +12,17 @@ class WorkTypeSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Row(
       children: [
         Expanded(
           child: RadioListTile<String>(
-            title: const Text('Budget'),
+            visualDensity: VisualDensity.compact,
+            contentPadding: EdgeInsets.zero,
+            title: Text(
+              'Budget',
+              style: theme.textTheme.titleSmall,
+            ),
             value: 'Budget',
             groupValue: selectedType,
             onChanged: (value) {
@@ -24,12 +30,17 @@ class WorkTypeSelector extends StatelessWidget {
                 onChanged(value);
               }
             },
-            activeColor: const Color(0xFFE67E22),
+            activeColor: theme.colorScheme.primary,
           ),
         ),
         Expanded(
           child: RadioListTile<String>(
-            title: const Text('Issue'),
+            visualDensity: VisualDensity.compact,
+            contentPadding: EdgeInsets.zero,
+            title: Text(
+              'Issue',
+              style: theme.textTheme.titleSmall,
+            ),
             value: 'Issue',
             groupValue: selectedType,
             onChanged: (value) {
@@ -37,7 +48,7 @@ class WorkTypeSelector extends StatelessWidget {
                 onChanged(value);
               }
             },
-            activeColor: const Color(0xFFE67E22),
+            activeColor: theme.colorScheme.primary,
           ),
         ),
       ],

@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   void _showCheckinDialog() {
     showDialog(
       context: context,
-      builder: (context) => const CheckinDialog(),
+      builder: (context) => CheckinDialog(),
     );
   }
 
