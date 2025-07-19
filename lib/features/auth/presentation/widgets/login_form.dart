@@ -120,7 +120,7 @@ class _LoginFormState extends State<LoginForm> {
             },
           ),
         ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 12),
         Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -130,14 +130,12 @@ class _LoginFormState extends State<LoginForm> {
                 style: theme.textTheme.bodySmall
                     ?.copyWith(fontWeight: FontWeight.w300),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Register',
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: theme.colorScheme.primary,
-                  ),
+              const SizedBox(width: 4),
+              Text(
+                'Register',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: theme.colorScheme.primary,
                 ),
               ),
             ],
