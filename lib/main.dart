@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         title: 'Swift Checkin',
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.dark,
         initialRoute: AppRoutes.login,
         routes: AppRoutes.routes,
         debugShowCheckedModeBanner: false,
