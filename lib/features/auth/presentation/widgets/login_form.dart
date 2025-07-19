@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/auth_cubit.dart';
+import 'package:swift_checkin/features/auth/presentation/cubit/auth_cubit.dart';
 import 'passcode_field.dart';
 
 class LoginForm extends StatefulWidget {

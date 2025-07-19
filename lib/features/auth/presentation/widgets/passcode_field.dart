@@ -49,7 +49,7 @@ class _PasscodeFieldState extends State<PasscodeField> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(4, (index) {
         return SizedBox(
-          width: 60,
+          width: 54,
           child: TextField(
             controller: _controllers[index],
             focusNode: _focusNodes[index],
@@ -61,7 +61,7 @@ class _PasscodeFieldState extends State<PasscodeField> {
             ],
             decoration: const InputDecoration(
               counterText: '',
-              contentPadding: EdgeInsets.symmetric(vertical: 16),
+              contentPadding: EdgeInsets.symmetric(vertical: 12),
             ),
             onChanged: (value) {
               _updateMainController();

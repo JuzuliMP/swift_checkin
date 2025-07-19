@@ -10,7 +10,7 @@ class AuthCubit extends Cubit<AuthState> {
     emit(AuthLoading());
 
     // Simulate API call delay
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
 
     // Simple validation
     if (phoneNumber.isEmpty || passcode.isEmpty) {
