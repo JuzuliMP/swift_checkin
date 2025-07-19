@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swift_checkin/features/auth/presentation/cubit/auth_cubit.dart';
-import 'passcode_field.dart';
+import 'package:pinput/pinput.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -45,11 +45,32 @@ class _LoginFormState extends State<LoginForm> {
               theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w300),
         ),
         const SizedBox(height: 6),
-        PasscodeField(
-          controller: _passcodeController,
-          onChanged: (value) {
-            setState(() {});
-          },
+        SizedBox(
+          width: double.infinity,
+          child: Pinput(
+            defaultPinTheme: PinTheme(
+              margin: const EdgeInsets.symmetric(horizontal:12),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surface,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: theme.colorScheme.secondary),
+              ),
+            ),
+            focusedPinTheme:PinTheme(
+              margin: const EdgeInsets.symmetric(horizontal:12),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surface,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: theme.colorScheme.secondary),
+              ),
+            ),
+            length: 4,
+            controller: _passcodeController,
+            keyboardType: TextInputType.number,
+            onChanged: (value) {},
+          ),
         ),
         const SizedBox(height: 16),
         Row(

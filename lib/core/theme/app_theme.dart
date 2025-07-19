@@ -62,6 +62,14 @@ class AppTheme {
           borderSide: const BorderSide(color: lightPrimary),
         ),
       ),
+      snackBarTheme: const SnackBarThemeData(
+        backgroundColor: Color(0xFFE74C3C), // Light error red
+        contentTextStyle: TextStyle(color: Colors.white, fontFamily: 'DMSans'),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+      ),
     );
   }
 
@@ -108,6 +116,14 @@ class AppTheme {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: darkPrimary),
+        ),
+      ),
+      snackBarTheme: const SnackBarThemeData(
+        backgroundColor: Color(0xFFB00020), // Dark error red
+        contentTextStyle: TextStyle(color: Colors.white, fontFamily: 'DMSans'),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
