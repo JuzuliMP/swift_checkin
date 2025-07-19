@@ -7,7 +7,7 @@ A professional Flutter application built as a machine task submission, demonstra
 ## 🚀 Demo
 
 > **Demo Video/Screenshots:**
-> [Demo](assets/demo/demo.gif)
+> ![app demo](assets/demo/demo.gif)
 
 ---
 
