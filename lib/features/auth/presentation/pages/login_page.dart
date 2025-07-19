@@ -33,24 +33,26 @@ class LoginPage extends StatelessWidget {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                const SizedBox(height: 48),
-                Text(
-                  'Login',
-                  style: theme.textTheme.headlineLarge
-                      ?.copyWith(color: theme.colorScheme.primary),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Welcome back to your account',
-                  style: theme.textTheme.titleLarge,
-                ),
-                const SizedBox(height: 48),
-                const Expanded(
-                  child: LoginForm(),
-                ),
-              ],
+            child: SingleChildScrollView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 48),
+                  Text(
+                    'Login',
+                    style: theme.textTheme.headlineLarge
+                        ?.copyWith(color: theme.colorScheme.primary),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Welcome back to your account',
+                    style: theme.textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 48),
+                  const LoginForm(),
+                ],
+              ),
             ),
           ),
         ),
