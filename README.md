@@ -7,7 +7,7 @@ A professional Flutter application built as a machine task submission, demonstra
 ## 🚀 Demo
 
 > **Demo Video/Screenshots:**
-> [assets/demo/swift_checkin_demo.mp4](assets/demo/swift_checkin_demo.mp4)
+> [Demo](assets/demo/demo.gif)
 
 ---
 
