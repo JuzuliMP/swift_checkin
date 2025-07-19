@@ -37,6 +37,7 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+          elevation: 0,
           backgroundColor: lightPrimary,
           foregroundColor: lightOnPrimary,
           padding: const EdgeInsets.symmetric(vertical: 12),
@@ -93,6 +94,7 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+          elevation: 0,
           backgroundColor: darkPrimary,
           foregroundColor: darkOnPrimary,
           padding: const EdgeInsets.symmetric(vertical: 12),

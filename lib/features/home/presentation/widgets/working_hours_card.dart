@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/home_cubit.dart';
+import 'package:swift_checkin/features/home/presentation/cubit/home_cubit.dart';
 
 class WorkingHoursCard extends StatelessWidget {
   const WorkingHoursCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF666666),
+        color: theme.colorScheme.secondary,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         children: [
-          const Text(
+           Text(
             'Working Hours',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+              style: theme.textTheme.titleMedium?.copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.6)),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state) {
               String timeText = "00:00:00 Hrs";
@@ -33,11 +30,7 @@ class WorkingHoursCard extends StatelessWidget {
               }
               return Text(
                 timeText,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: theme.textTheme.headlineLarge?.copyWith(color: theme.colorScheme.onPrimary),
               );
             },
           ),

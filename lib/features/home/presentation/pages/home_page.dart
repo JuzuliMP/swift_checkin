@@ -32,21 +32,57 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            children: [
-              const HomeHeader(),
-              const SizedBox(height: 32),
-              const WorkingHoursCard(),
-              const SizedBox(height: 24),
-              ManualCheckinButton(onPressed: _showCheckinDialog),
-              const Spacer(),
-            ],
+      appBar: AppBar(
+        flexibleSpace: ClipRRect(
+          borderRadius:
+              const BorderRadius.vertical(bottom: Radius.circular(22)),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  theme.colorScheme.onPrimary,
+                  theme.colorScheme.primary.withOpacity(0.6),
+                ],
+              ),
+            ),
           ),
         ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.menu_rounded),
+          color: theme.colorScheme.surface,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.file_download_outlined),
+            color: theme.colorScheme.surface,
+          ),
+        ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(340),
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const HomeHeader(),
+                const SizedBox(height: 32),
+                const WorkingHoursCard(),
+                const SizedBox(height: 24),
+                ManualCheckinButton(onPressed: _showCheckinDialog),
+                const SizedBox(height: 32),
+              ],
+            ),
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.onPrimary,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
       ),
       bottomNavigationBar: CustomBottomNavigation(
         currentIndex: _currentIndex,

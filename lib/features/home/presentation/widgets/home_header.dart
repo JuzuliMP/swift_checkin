@@ -5,16 +5,29 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Hey Jose',
+              style: theme.textTheme.titleMedium
+                  ?.copyWith(color: theme.colorScheme.surface),
+            ),
+            Text(
+              'Tuesday 17 June, 2025',
+              style: theme.textTheme.titleSmall
+                  ?.copyWith(color: theme.colorScheme.surface),
+            ),
+          ],
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.download),
+        Image.asset(
+          'assets/images/dp.png',
+          height: 40,
+          width: 40,
         ),
       ],
     );
